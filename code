@@ -1,0 +1,1317 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include<cstdlib>
+#include<windows.h>
+
+using namespace std;
+
+//  Canteen Management System BY
+
+//           Dheeeraj Singh         84
+//           Siddhesh Paithankar    76
+//           Viraj Gugale			79	
+//			 Pranjal Sharma    		82
+
+class canteen
+{
+	
+	public:
+	int id;
+	string day;
+	int order_no;
+	
+	canteen()
+	{
+		order_no=0;              // Constructer
+	}
+	
+	void name(int id)
+	{
+		this->id=id;	//   This Function Used For Giving Unique Identity
+	}
+	void name()  //   Function Overloading 
+	{
+		cout<<"Your Unique Id is  "<<id;
+	}
+	
+	void operator+ ();
+	void display();
+	void days();
+	void menu();
+} c;
+
+void canteen::display()
+{
+	cout<<endl;
+	system("Color 0B");
+	cout<<"----------------- MIT AOE CANTEEN -------------------"<<endl<<endl;
+	cout<<"_________ Welcome To The MIT AOE Truck Shop _________"<<endl;
+	
+	
+}
+
+void canteen::days()
+{
+	cout<<"               __________                 "<<endl;
+	cout<<"               | NOTICE |                 "<<endl;
+	cout<<"______________________________________________"<<endl<<endl;
+	cout<<"The Canteen is closed on Saturday and Sunday "<<endl;
+	cout<<"Working days timing of Canteen 8:30 AM - 5:00 PM "<<endl<<endl;
+	cout<<"______________________________________________"<<endl;
+	
+}
+
+void canteen::operator+()
+{
+	int a,t;
+	order_no=rand();
+	if(order_no<100)
+	{
+		
+		a=rand();
+		cout<<"Wait For Some Time Buddy "<<endl;
+		t=a/10;
+		cout<<"Waiting Time = "<<t<<" milli seconds"<<endl;           // Using / for Operator Overloading
+	}
+	else
+	{
+		cout<<"You can order now Waiting is Over "<<endl<<endl;
+	}
+	
+}
+
+void canteen::menu()
+{
+	int ch,price,bill,dis;
+	cout<<endl;
+	cout<<"Enter the day which you want to know the menu : ";
+	cin>>day;
+	if(day=="Monday" || day=="monday")
+	{
+		cout<<"_______________________________________________________________"<<endl;
+		cout<<"What Do You Want "<<endl<<endl;
+		cout<<"1.Break Fast"<<"\t\t";
+		cout<<"2.Lunch"<<"\t\t";
+		cout<<"3.Dinner"<<endl<<endl;
+		cout<<"Enter your Choice : ";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+			{
+					
+				int ch2;
+				string ch3;
+				cout<<"___________________________________________________________"<<endl;
+				cout<<"Break Fast Menu *-* "<<endl;
+				cout<<"1.Idli With Chatni Only    RS: 25 "<<endl;
+				cout<<"2.Parantha                 RS: 40 "<<endl;
+				cout<<"3.Dahi Idli                RS: 45 "<<endl;
+				cout<<"4.Egg Omlet                RS: 35 "<<endl;
+				cout<<"5.Wada Pav                 RS: 15 "<<endl;
+				cout<<"___________________________________________________________"<<endl;
+				do
+				{
+					cout<<endl;
+					cout<<"Enter Your Choice : ";
+					cin>>ch2;
+					if(ch2==1)
+					{
+						price+=25;
+					}
+					else if(ch2==2)
+					{
+						price+=40;
+					}
+					else if(ch2==3)
+					{
+						price+=45;
+					}
+					else if(ch2==4)
+					{
+						price+=35;
+					}
+					else if(ch2==5)
+					{
+						price+=15;
+					}
+					cout<<"Do you want to add more in the list [YES or NO] : ";
+					cin>>ch3;
+				}
+				while(ch3=="YES" || ch3=="yes");
+				cout<<endl;
+				cout<<"The Total Price is "<<price;
+				if(price>500 && price <800)
+				{
+					dis=(10*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill is After 10 % Discount is "<<bill;
+				}  
+				break;
+				
+			}
+						
+			case 2:
+			{
+				int ch2;
+				string ch3;
+				cout<<"Lunch Menu *-* "<<endl;	
+				cout<<" ____________________________________________________________________________________________________"<<endl;
+				cout<<"| Veg                      |"<<"Non-Veg                   |"<<"Drinks                |"<<"Junk Food             |"<<endl;
+				cout<<"|__________________________|__________________________|______________________|______________________|"<<endl;
+				cout<<"|1.Salad & Papad   RS:100  |"<<"4.Chicken Roti   RS:200   |"<<"7.Cold Coffe   RS:30  |"<<"10.Burger      RS:60  |"<<endl;
+				cout<<"|2.Rice & Chapati  RS:130  |"<<"5.Chicken Leg    RS:140   |"<<"8.Coffe        RS:20  |"<<"11.Pizza       RS:178 |"<<endl;
+				cout<<"|3.Dal Masala      RS:160  |"<<"6.Egg Rice       RS:130   |"<<"9.Soda         Rs:15  |"<<"12.Fries       RS:60  |"<<endl;
+				cout<<"|__________________________|__________________________|______________________|______________________|"<<endl;
+				do
+				{
+					cout<<endl;
+					cout<<"Enter Your Choice : ";
+					cin>>ch2;
+					if(ch2==1)
+					{
+						price+=100;
+					}
+					else if(ch2==2)
+					{
+						price+=130;
+					}
+					else if(ch2==3)
+					{
+						price+=160;
+					}
+					else if(ch2==4)
+					{
+						price+=200;
+					}
+					else if(ch2==5)
+					{
+						price+=140;
+					}
+					else if(ch2==6)
+					{
+						price+=130;
+					}
+					else if(ch2==7)
+					{
+						price+=30;
+					}
+					else if(ch2==8)
+					{
+						price+=20;
+					}
+					else if(ch2==9)
+					{
+						price+=15;
+					}
+					else if(ch2==10)
+					{
+						price+=60;
+					}
+					else if(ch2==11)
+					{
+						price+=178;
+					}
+					else if(ch2==12)
+					{	
+						price+=60;
+					}
+					cout<<"Do you want to add more in the list [YES or NO] : ";
+					cin>>ch3;
+				}
+				while(ch3=="YES" || ch3=="yes");
+				cout<<endl;
+				cout<<"The Total Price is "<<price<<endl;
+				if(price>500 && price <800)
+				{
+					dis=(10*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 10% Discount is "<<bill;
+				} 
+				else if(price>1000)
+				{
+					dis=(15*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 15 % Discount is "<<bill;
+				}
+				break;
+			}
+			
+			case 3:
+			{
+				int ch2;
+				string ch3;
+				cout<<"Dinner Menu *-* "<<endl;	
+				cout<<" _____________________________________________________________________________________________________________"<<endl;
+				cout<<"| Veg                       |"<<"Non-Veg                    |"<<"Drinks                  |"<<"Junk Food                  |"<<endl;
+				cout<<"|___________________________|___________________________|________________________|___________________________|"<<endl;
+				cout<<"|1.Plain Rice        RS:160 |"<<"4.Chicken Fried   RS:400   |"<<"7.Pepsi  	 RS:30   |"<<"10.Panner Pizza   RS:260   |"<<endl;
+				cout<<"|2.Yellow Dal tadka  RS:130 |"<<"5.Chicken Handi   RS:840   |"<<"8.Soft Drinks   RS:120  |"<<"11.Sandwich       RS:178   |"<<endl;
+				cout<<"|3.Barbatti Bhaji    RS:190 |"<<"6.Biryani         RS:330   |"<<"9.Alchol        Rs:1005 |"<<"12.Fries          RS:60    |"<<endl;
+				cout<<"|___________________________|___________________________|________________________|___________________________|"<<endl;
+				do
+				{
+					cout<<endl;
+					cout<<"Enter Your Choice : ";
+					cin>>ch2;
+					if(ch2==1)
+					{
+						price+=160;
+					}
+					else if(ch2==2)
+					{
+						price+=130;
+					}
+					else if(ch2==3)
+					{
+						price+=198;
+					}
+					else if(ch2==4)
+					{
+						price+=400;
+					}
+					else if(ch2==5)
+					{
+						price+=840;
+					}
+					else if(ch2==6)
+					{
+						price+=330;
+					}
+					else if(ch2==7)
+					{
+						price+=30;
+					}
+					else if(ch2==8)
+					{
+						price+=120;
+					}
+					else if(ch2==9)
+					{
+						price+=1005;
+					}
+					else if(ch2==10)
+					{
+						price+=60;
+					}
+					else if(ch2==11)
+					{
+						price+=178;
+					}
+					else if(ch2==12)
+					{	
+						price+=60;
+					}
+					cout<<"Do you want to add more in the list [YES or NO] : ";
+					cin>>ch3;
+				}
+				while(ch3=="YES" || ch3=="yes");
+				cout<<endl;
+				cout<<"The Total Price is "<<price<<endl;
+				if(price>500 && price <800)
+				{
+					dis=(10*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 10 % Discount is "<<bill;
+				} 
+				else if(price>1000)
+				{
+					dis=(15*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 15% Discount is  "<<bill;
+				}
+				break;
+			}
+		}
+	}
+	else if(day=="Tuesday" || day=="tuesday")
+	{
+		int ch,ch2;
+		string ch3;
+		cout<<endl;
+		cout<<"_______________________________________________________________"<<endl;
+		cout<<"What Do You Want "<<endl<<endl;
+		cout<<"1.Break Fast"<<"\t\t";
+		cout<<"2.Lunch"<<"\t\t";
+		cout<<"3.Dinner"<<endl<<endl;
+		cout<<"Enter your Choice : ";
+		cin>>ch;
+		switch(ch)
+		{
+		
+		case 1:
+		{	
+			cout<<endl;
+			cout<<"Tuesday Break Fast Menu *_* "<<endl;
+			cout<<"_____________________________________________"<<endl;
+			cout<<"1.Vada Sambhar             RS: 25 "<<endl;
+			cout<<"2.Methi Parantha           RS: 30 "<<endl;
+			cout<<"3.Dahi Vada                RS: 40 "<<endl;
+			cout<<"4.Egg Omlet                RS: 35 "<<endl;
+			cout<<"5.Cheese Wada Pav          RS: 20 "<<endl;
+			cout<<"____________________________________________"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=25;
+				}
+				else if(ch2==2)
+				{
+					price+=30;
+				}
+				else if(ch2==3)
+				{
+					price+=40;
+				}
+				else if(ch2==4)
+				{
+					price+=35;
+				}
+				else if(ch2==5)
+				{
+					price+=20;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price;
+			if(price>500 && price <800)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 10 % Discount is "<<bill;
+			}  
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill is 15 % Discount is "<<bill;
+			}
+			break;
+				
+		}
+		case 2:
+		{
+			int ch2;
+			string ch3;
+			cout<<endl;
+			cout<<"Tuesday Lunch Menu *-* "<<endl;	
+			cout<<" _______________________________________________________________________________________________________"<<endl;
+			cout<<"|Veg                     |"<<"Non-Veg                   |"<<"Drinks                |"<<"Junk Food                  |"<<endl;
+			cout<<"|________________________|__________________________|______________________|___________________________|"<<endl;
+			cout<<"|1.Veg Crispy    RS:120  |"<<"4.Chicken Nuggets  RS:170 |"<<"7.Cold Coffe   RS:30  |"<<"10.Shejvan Noodles  RS:80  |"<<endl;
+			cout<<"|2.Dal Batti     RS:180  |"<<"5.Chicken Handi    RS:300 |"<<"8.Coffe        RS:20  |"<<"11.Panner Pizza     RS:210 |"<<endl;
+			cout<<"|3.Mix Veg       RS:160  |"<<"6.Anda Kadi        RS:150 |"<<"9.Soda         Rs:15  |"<<"12.Chease Fries     RS:80  |"<<endl;
+			cout<<"|________________________|__________________________|______________________|___________________________|"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=120;
+				}
+				else if(ch2==2)
+				{
+					price+=180;
+				}
+				else if(ch2==3)
+				{
+					price+=160;
+				}
+				else if(ch2==4)
+				{
+					price+=170;
+				}
+				else if(ch2==5)
+				{
+					price+=300;
+				}
+				else if(ch2==6)
+				{
+					price+=150;
+				}
+				else if(ch2==7)
+				{
+					price+=30;
+				}
+				else if(ch2==8)
+				{
+					price+=20;
+				}
+				else if(ch2==9)
+				{
+					price+=15;
+				}
+				else if(ch2==10)
+				{
+					price+=80;
+				}
+				else if(ch2==11)
+				{
+					price+=218;
+				}
+				else if(ch2==12)
+				{	
+					price+=80;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price;
+			if(price>500 && price <800)
+			{
+				dis=(10*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 10 % Discount is "<<bill;
+			} 
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill is 15 % Discount is "<<bill;
+			}
+			break;
+			
+		}
+		case 3:
+		{
+			int ch2;
+			string ch3;	
+			cout<<endl;
+			cout<<"Tuesday Dinner Menu *-* "<<endl;
+			cout<<" ____________________________________________________________________________________________________"<<endl;
+			cout<<"| Veg                      |"<<"Non-Veg                   |"<<"Drinks                |"<<"Junk Food             |"<<endl;
+			cout<<"|__________________________|__________________________|______________________|______________________|"<<endl;
+			cout<<"|1.Masala Papad    RS:50   |"<<"4.Lacha Paratha    RS:15  |"<<"7.Cold Coffe   RS:30  |"<<"10.Veg Burger  RS:80  |"<<endl;
+			cout<<"|2.Jeera Rice      RS:130  |"<<"5.Tandoori Chicken RS:150 |"<<"8.Coffe        RS:20  |"<<"11.Pizza       RS:178 |"<<endl;
+			cout<<"|3.Dal Tadka       RS:160  |"<<"6.Anda Bhurji      RS:80  |"<<"9.Soda         Rs:15  |"<<"12.Fries       RS:60  |"<<endl;
+			cout<<"|__________________________|__________________________|______________________|______________________|"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=50;
+				}
+				else if(ch2==2)
+				{
+					price+=130;
+				}
+				else if(ch2==3)
+				{
+					price+=160;
+				}
+				else if(ch2==4)
+				{
+					price+=15;
+				}
+				else if(ch2==5)
+				{
+					price+=150;
+				}
+				else if(ch2==6)
+				{
+					price+=80;
+				}
+				else if(ch2==7)
+				{
+					price+=30;
+				}
+				else if(ch2==8)
+				{
+					price+=20;
+				}
+				else if(ch2==9)
+				{
+					price+=15;
+				}
+				else if(ch2==10)
+				{
+					price+=80;
+				}
+				else if(ch2==11)
+				{
+					price+=178;
+				}
+				else if(ch2==12)
+				{	
+					price+=60;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<"The Total Price is "<<price<<endl;
+			if(price>500 && price <800)
+			{
+				dis=(10*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 10 % Discount  is "<<bill;
+			} 
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill is 15 % Discount is "<<bill;
+			}
+			break;
+		}
+		
+	}
+	}
+	else if(day=="Wednesday" || day=="wednesday")
+	{
+		int ch,ch2;
+		string ch3;
+		cout<<endl;
+		cout<<"_______________________________________________________________"<<endl;
+		cout<<"What Do You Want "<<endl<<endl;
+		cout<<"1.Break Fast"<<"\t\t";
+		cout<<"2.Lunch"<<"\t\t";
+		cout<<"3.Snacks"<<endl<<endl;
+		cout<<"Enter your Choice : ";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+			{
+				string ch3;
+				cout<<endl<<endl;
+				cout<<"Wednesday Break Fast Menu *-* "<<endl;
+				cout<<"___________________________________________________________"<<endl;
+				cout<<"1.Bread Omlet    RS: 35 "<<endl;
+				cout<<"2.Parantha       RS: 40 "<<endl;
+				cout<<"3.Sambar         RS: 45 "<<endl;
+				cout<<"4.Boiled Egg     RS: 35 "<<endl;
+				cout<<"5.Aloo Paratha   RS: 65 "<<endl;
+				cout<<"___________________________________________________________"<<endl;
+				do
+				{
+					cout<<endl;
+					cout<<"Enter Your Choice : ";
+					cin>>ch2;
+					if(ch2==1)
+					{
+						price+=35;
+					}
+					else if(ch2==2)
+					{
+						price+=40;
+					}
+					else if(ch2==3)
+					{
+						price+=45;
+					}
+					else if(ch2==4)
+					{
+						price+=35;
+					}
+					else if(ch2==5)
+					{
+						price+=65;
+					}
+					cout<<"Do you want to add more in the list [YES or NO] : ";
+					cin>>ch3;
+				}
+				
+				while(ch3=="YES" || ch3=="yes");
+				cout<<endl;
+				cout<<"The Total Price is "<<price<<endl;
+				if(price>500 && price <800)
+				{
+					dis=(10*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 10 % Discount is "<<bill;
+				}  
+				break;
+				
+			}
+						
+			case 2:
+			{
+				int ch2;
+				string ch3;
+				cout<<endl;
+				cout<<"Wednesday Lunch Menu *-* "<<endl;	
+				cout<<" ________________________________________________________________________________________________________"<<endl;
+				cout<<"| Veg                   |"<<"Non-Veg                     |"<<"Drinks                   |"<<"Junk Food               |"<<endl;
+				cout<<"|_______________________|____________________________|_________________________|________________________|"<<endl;
+				cout<<"|1.Mung Dal     RS:130  |"<<"4.Tandoor Chicken   RS:350  |"<<"7.Cold Milk       RS:50  |"<<"10.French Fries   RS:60 |"<<endl;
+				cout<<"|2.Lauki Chana  RS:230  |"<<"5.Chicken Masala    RS:140  |"<<"8.Milk            RS:20  |"<<"11.Aloo Tikki     RS:48 |"<<endl;
+				cout<<"|3.Dal Masala   RS:160  |"<<"6.ChickencBread     RS:50   |"<<"9.Choclate Milk   Rs:25  |"<<"12.Cheese Burger  RS:60 |"<<endl;
+				cout<<"|_______________________|____________________________|_________________________|________________________|"<<endl;
+				do
+				{
+					cout<<endl;
+					cout<<"Enter Your Choice : ";
+					cin>>ch2;
+					if(ch2==1)
+					{
+						price+=130;
+					}
+					else if(ch2==2)
+					{
+						price+=230;
+					}
+					else if(ch2==3)
+					{
+						price+=160;
+					}
+					else if(ch2==4)
+					{
+						price+=350;
+					}
+					else if(ch2==5)
+					{
+						price+=140;
+					}
+					else if(ch2==6)
+					{
+						price+=50;
+					}
+					else if(ch2==7)
+					{
+						price+=50;
+					}
+					else if(ch2==8)
+					{
+						price+=20;
+					}
+					else if(ch2==9)
+					{
+						price+=25;
+					}
+					else if(ch2==10)
+					{
+						price+=60;
+					}
+					else if(ch2==11)
+					{
+						price+=48;
+					}
+					else if(ch2==12)
+					{	
+						price+=60;
+					}
+					cout<<"Do you want to add more in the list [YES or NO] : ";
+					cin>>ch3;
+				}
+			
+				while(ch3=="YES" || ch3=="yes");
+				cout<<endl;
+				cout<<"The Total Price is "<<price<<endl;
+				if(price>500 && price <800)
+				{
+					dis=(10*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 10 % Discount  is "<<bill;
+				} 
+				else if(price>1000)
+				{
+					dis=(15*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 15 % Discount  is "<<bill;
+				}
+				break;
+			}
+			
+			case 3:
+			{
+				int ch2;
+				string ch3;
+				cout<<"Dinner Menu *-* "<<endl;	
+				cout<<" _____________________________________________________________________________________________________________"<<endl;
+				cout<<"| Veg                       |"<<"Non-Veg                    |"<<"Drinks                  |"<<"Junk Food                  |"<<endl;
+				cout<<"|___________________________|___________________________|________________________|___________________________|"<<endl;
+				cout<<"|1.Plain Rice        RS:160 |"<<"4.Chicken Fried   RS:400   |"<<"7.Pepsi  	 RS:30   |"<<"10.Panner Pizza   RS:260   |"<<endl;
+				cout<<"|2.Yellow Dal tadka  RS:130 |"<<"5.Chicken Handi   RS:840   |"<<"8.Soft Drinks   RS:120  |"<<"11.Sandwich      RS:178    |"<<endl;
+				cout<<"|3.Barbatti Bhaji    RS:190 |"<<"6.Biryani         RS:330   |"<<"9.Alchol        Rs:1005 |"<<"12.Fries         RS:60     |"<<endl;
+				cout<<"|___________________________|___________________________|________________________|___________________________|"<<endl;
+				do
+				{
+					cout<<endl;
+					cout<<"Enter Your Choice : ";
+					cin>>ch2;
+					if(ch2==1)
+					{
+						price+=160;
+					}
+					else if(ch2==2)
+					{
+						price+=130;
+					}
+					else if(ch2==3)
+					{
+						price+=198;
+					}
+					else if(ch2==4)
+					{
+						price+=400;
+					}
+					else if(ch2==5)
+					{
+						price+=840;
+					}
+					else if(ch2==6)
+					{
+						price+=330;
+					}
+					else if(ch2==7)
+					{
+						price+=30;
+					}
+					else if(ch2==8)
+					{
+						price+=120;
+					}
+					else if(ch2==9)
+					{
+						price+=1005;
+					}
+					else if(ch2==10)
+					{
+						price+=60;
+					}
+					else if(ch2==11)
+					{
+						price+=178;
+					}
+					else if(ch2==12)
+					{	
+						price+=60;
+					}
+					cout<<"Do you want to add more in the list [YES or NO] : ";
+					cin>>ch3;
+				}
+				while(ch3=="YES" || ch3=="yes");
+				cout<<endl;
+				cout<<"The Total Price is "<<price<<endl;
+				if(price>500 && price <800)
+				{
+					dis=(10*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 10 % Discount  is "<<bill;
+				} 
+				else if(price>1000)
+				{
+					dis=(15*price)/100;
+					bill=price-dis;
+					cout<<"The Total Bill After 15 % Discount is  "<<bill;
+				}
+				break;
+			}
+		}
+		
+	}
+	else if(day=="Thursday" || day=="thursday")
+	{
+		cout<<"_______________________________________________________________"<<endl;
+		cout<<"What Do You Want "<<endl<<endl;
+		cout<<"1.Break Fast"<<"\t\t";
+		cout<<"2.Lunch"<<"\t\t";
+		cout<<"3.Dinner"<<endl<<endl;
+		cout<<"Enter your Choice : ";
+		cin>>ch;
+		switch(ch)
+		{
+			
+		case 1:
+		{	
+			int ch2;
+			string ch3;
+			cout<<endl;
+			cout<<"Thursday Break Fast Menu *_* "<<endl;
+			cout<<"__________________________________________________"<<endl;
+			cout<<"1.Uttapa                   RS: 30 "<<endl;
+			cout<<"2.Panner Parantha          RS: 45 "<<endl;
+			cout<<"3.Pohe                     RS: 20 "<<endl;
+			cout<<"4.Scrambaled Eggs          RS: 40 "<<endl;
+			cout<<"5.Boiled Sproutes          RS: 35 "<<endl;
+			cout<<"___________________________________________________"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=30;
+				}
+				else if(ch2==2)
+				{
+					price+=45;
+				}
+				else if(ch2==3)
+				{
+					price+=20;
+				}
+				else if(ch2==4)
+				{
+					price+=40;
+				}
+				else if(ch2==5)
+				{
+					price+=35;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price<<endl;
+			if(price>500 && price <800)
+			{
+				dis=(10*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 10 % Discount is "<<bill;
+			}  
+			break;
+				
+		}
+		
+		case 2:
+		{
+			int ch2;
+			string ch3;
+			cout<<endl;
+			cout<<"Thursday Lunch Menu *-* "<<endl;	
+			cout<<" ___________________________________________________________________________________________________________"<<endl;
+			cout<<"| Veg                      |"<<"Non-Veg                    |"<<"Drinks                 |"<<"Junk Food                  |"<<endl;
+			cout<<"|__________________________|___________________________|_______________________|___________________________|"<<endl;
+			cout<<"|1.Veg  Lolipo     RS:120  |"<<"4.Chicken Pakoda    RS:170 |"<<"7.Black Coffe   RS:40  |"<<"10.Hacka Noodles    RS:70  |"<<endl;
+			cout<<"|2.Pav Bhaji       RS:80   |"<<"5.Butter Chicken    RS:200 |"<<"8.capacheno     RS:60  |"<<"11.Pan Pizza        RS:200 |"<<endl;
+			cout<<"|3.Butter Panner   RS:190  |"<<"6.Anda Masala       RS:180 |"<<"9.Jeera Soda    Rs:15  |"<<"12.Aloo Smilies     RS:70  |"<<endl;
+			cout<<"|__________________________|___________________________|_______________________|___________________________|"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=120;
+				}
+				else if(ch2==2)
+				{
+					price+=80;
+				}
+				else if(ch2==3)
+				{
+					price+=190;
+				}
+				else if(ch2==4)
+				{
+					price+=170;
+				}
+				else if(ch2==5)
+				{
+					price+=200;
+				}
+				else if(ch2==6)
+				{
+					price+=180;
+				}
+				else if(ch2==7)
+				{
+					price+=40;
+				}
+				else if(ch2==8)
+				{
+					price+=60;
+				}
+				else if(ch2==9)
+				{
+					price+=15;
+				}
+				else if(ch2==10)
+				{
+					price+=70;
+				}
+				else if(ch2==11)
+				{
+					price+=200;
+				}
+				else if(ch2==12)
+				{	
+					price+=70;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price<<endl;
+			if(price>500 && price <800)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill is "<<bill;
+			} 
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 15 % Discount  is "<<bill;
+			}
+			break;
+		}
+		case 3:
+		{
+			int ch2;
+			string ch3;
+			cout<<endl;
+			cout<<"Thursday Dinner Menu *-* "<<endl;	
+			cout<<" ________________________________________________________________________________________________________"<<endl;
+			cout<<"| Veg                      |"<<"Non-Veg                   |"<<"Drinks                |"<<"Junk Food                 |"<<endl;
+			cout<<"|__________________________|__________________________|______________________|__________________________|"<<endl;
+			cout<<"|1.Chilli Panner   RS:90   |"<<"4.Fried Fish    RS:150    |"<<"7.Kuka         RS:40  |"<<"10.Veg Sandwich    RS:60  |"<<endl;
+			cout<<"|2.Dal Kichidi     RS:100  |"<<"5.Chicken Kabab RS:160    |"<<"8.Coco milk    RS:20  |"<<"11.Pasta           RS:70  |"<<endl;
+			cout<<"|3.Veg Kofta       RS:210  |"<<"6.Anda Ghotala  RS:120    |"<<"9.Jaljeera     Rs:20  |"<<"12.popcorn medium  RS:60  |"<<endl;
+			cout<<"|__________________________|__________________________|______________________|__________________________|"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=90;
+				}
+				else if(ch2==2)
+				{
+					price+=100;
+				}
+				else if(ch2==3)
+				{
+					price+=210;
+				}
+				else if(ch2==4)
+				{
+					price+=150;
+				}
+				else if(ch2==5)
+				{
+					price+=160;
+				}
+				else if(ch2==6)
+				{
+					price+=120;
+				}
+				else if(ch2==7)
+				{
+					price+=40;
+				}
+				else if(ch2==8)
+				{
+					price+=20;
+				}
+				else if(ch2==9)
+				{
+					price+=25;
+				}
+				else if(ch2==10)
+				{
+					price+=60;
+				}
+				else if(ch2==11)
+				{
+					price+=78;
+				}
+				else if(ch2==12)
+				{	
+					price+=60;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price<<endl;;
+			if(price>500 && price <800)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill is "<<bill;
+			}
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 15 % Discount  is "<<bill;
+			} 
+			break;
+		}			
+		}
+	}
+	else if(day=="Friday" || day=="friday")
+	{
+		
+		cout<<"_______________________________________________________________"<<endl;
+		cout<<"What Do You Want "<<endl<<endl;
+		cout<<"1.Break Fast"<<"\t\t";
+		cout<<"2.Lunch"<<"\t\t";
+		cout<<"3.Dinner"<<endl<<endl;
+		cout<<"Enter your Choice : ";
+		cin>>ch;
+		switch(ch)
+		{
+		
+		case 1:
+		{	
+			int ch2;
+			string ch3;
+			cout<<endl;
+			cout<<"Friday Break Fast Menu *_* "<<endl;
+			cout<<"___________________________________________"<<endl;
+			cout<<"1.Samosa                   RS: 15 "<<endl;
+			cout<<"2.Allo Paratha             RS: 35 "<<endl;
+			cout<<"3.Upma                     RS: 20 "<<endl;
+			cout<<"4.Half Fry Omelet          RS: 30 "<<endl;
+			cout<<"5.Bhel                     RS: 30 "<<endl;
+			cout<<"__________________________________________"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=15;
+				}
+				else if(ch2==2)
+				{
+					price+=35;
+				}
+				else if(ch2==3)
+				{
+					price+=20;
+				}
+				else if(ch2==4)
+				{
+					price+=30;
+				}
+				else if(ch2==5)
+				{
+					price+=30;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price<<endl;
+			if(price>500 && price <800)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill is "<<bill;
+			}  
+			break;	
+		}
+		
+		case 2:
+		{
+			int ch2;
+			string ch3;	
+			cout<<" _______________________________________________________________________________________________________"<<endl;
+			cout<<"| Veg                       |"<<"Non-Veg                |"<<"Drinks                |"<<"Junk Food                  |"<<endl;
+			cout<<"|___________________________|_______________________|______________________|___________________________|"<<endl;
+			cout<<"|1.Panner Pacoda   RS:80    |"<<"4.Fish Sticks   RS:170 |"<<"7.Espresso     RS:60  |"<<"10.Soupy Noodles    RS:80  |"<<endl;
+			cout<<"|2.Special Daal    RS:180   |"<<"5.Fish Gravy    RS:180 |"<<"8.Green tea    RS:40  |"<<"11.Tackos           RS:80  |"<<endl;
+			cout<<"|3.Mattar Panner   RS:190   |"<<"6.Egg Role      RS:80  |"<<"9.Chaach       Rs:25  |"<<"12.Nachos           RS:60  |"<<endl;
+			cout<<"|___________________________|_______________________|______________________|___________________________|"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=80;
+				}
+				else if(ch2==2)
+				{
+					price+=180;
+				}
+				else if(ch2==3)
+				{
+					price+=190;
+				}
+				else if(ch2==4)
+				{
+					price+=170;
+				}
+				else if(ch2==5)
+				{
+					price+=180;
+				}
+				else if(ch2==6)
+				{
+					price+=80;
+				}
+				else if(ch2==7)
+				{
+					price+=60;
+				}
+				else if(ch2==8)
+				{
+					price+=40;
+				}
+				else if(ch2==9)
+				{
+					price+=25;
+				}
+				else if(ch2==10)
+				{
+					price+=80;
+				}
+				else if(ch2==11)
+				{
+					price+=80;
+				}
+				else if(ch2==12)
+				{	
+					price+=60;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price<<endl;
+			if(price>500 && price <800)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 10 % Discount  is "<<bill;
+			}
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 15 % Discount  is "<<bill;
+			}
+			break;
+		}
+						
+		case 3:
+		{
+			int ch2;
+			string ch3;	
+			cout<<" ___________________________________________________________________________________________________________"<<endl;
+			cout<<"| Veg                      |"<<"Non-Veg                   |"<<"Drinks                  |"<<"Junk Food                  |"<<endl;
+			cout<<"|__________________________|__________________________|________________________|___________________________|"<<endl;
+			cout<<"|1.Chilli Panner   RS:90   |"<<"4.Lemon Fish    RS:170    |"<<"7.Masala Dhood   RS:25  |"<<"10.Cheese Sandwich  RS:80  |"<<endl;
+			cout<<"|2.Masala Rice     RS:100  |"<<"5.Chicken Kabab RS:160    |"<<"8.Coco milk      RS:20  |"<<"11.Pasta            RS:70  |"<<endl;
+			cout<<"|3.Panner Angara   RS:210  |"<<"6.Anda Handi    RS:250    |"<<"9.Jaljeera       Rs:20  |"<<"12.Dabali           RS:60  |"<<endl;
+			cout<<"|__________________________|__________________________|________________________|___________________________|"<<endl;
+			do
+			{
+				cout<<endl;
+				cout<<"Enter Your Choice : ";
+				cin>>ch2;
+				if(ch2==1)
+				{
+					price+=90;
+				}
+				else if(ch2==2)
+				{
+					price+=100;
+				}
+				else if(ch2==3)
+				{
+					price+=210;
+				}
+				else if(ch2==4)
+				{
+					price+=170;
+				}
+				else if(ch2==5)
+				{
+					price+=160;
+				}
+				else if(ch2==6)
+				{
+					price+=250;
+				}
+				else if(ch2==7)
+				{
+					price+=25;
+				}
+				else if(ch2==8)
+				{
+					price+=20;
+				}
+				else if(ch2==9)
+				{
+					price+=20;
+				}
+				else if(ch2==10)
+				{
+					price+=80;
+				}
+				else if(ch2==11)
+				{
+					price+=70;
+				}
+				else if(ch2==12)
+				{	
+					price+=60;
+				}
+				cout<<"Do you want to add more in the list [YES or NO] : ";
+				cin>>ch3;
+			}
+			while(ch3=="YES" || ch3=="yes");
+			cout<<endl;
+			cout<<"The Total Price is "<<price<<endl;
+			if(price>500 && price <800)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 10 % Discount is "<<bill;
+			}
+			else if(price>1000)
+			{
+				dis=(15*price)/100;
+				bill=price-dis;
+				cout<<"The Total Bill After 15 % Discount  is "<<bill;
+			} 
+			break;
+		}
+	}
+	}
+	else 
+	{
+		cout<<endl<<"Canteen is Closed  Bro : ";
+	
+	}
+	
+}
+
+int main()
+{
+	c.operator + ();
+	Sleep(10000);
+	cout<<endl; 
+	cout<<"Waiting Time is Over you can Order Now  "<<endl;          // Operator Overloading
+	srand(time(0));
+	c.name(rand());      // Function Overloading  Calling
+	c.name();
+	cout<<endl;
+	c.display();
+	c.days();
+	c.menu();
+
+}
