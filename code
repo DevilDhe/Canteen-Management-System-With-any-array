@@ -1,16 +1,18 @@
+
+
+//   The canteen management system created by Dheeraj Singh from MIT Academy of Engineering College in Pune allows users to
+//   place orders for breakfast, lunch, and dinner. The system ensures that orders are not accepted while an order is being
+//   processed, and provides a waiting time for the user before allowing them to place an order. The system generates unique 
+//   IDs for each order and displays the menu for the day, allowing users to select items from the list using arrays. Overall,
+//   the system provides an efficient and user-friendly solution for managing canteen orders.
+
+
 #include<iostream>
 #include<bits/stdc++.h>
 #include<cstdlib>
 #include<windows.h>
 
 using namespace std;
-
-//  Canteen Management System BY
-
-//           Dheeeraj Singh         84
-//           Siddhesh Paithankar    76
-//           Viraj Gugale			79	
-//			 Pranjal Sharma    		82
 
 class canteen
 {
